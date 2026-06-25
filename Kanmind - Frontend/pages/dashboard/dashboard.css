@@ -1,0 +1,241 @@
+.dashboard_title{
+    margin-bottom: 32px;
+    width: 100%;
+
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--form-gap);
+}
+
+
+.stat-card {
+    flex: 1 1 100%;
+    text-align: center;
+    max-width: 100%;
+}
+
+.stat-card:nth-child(1) {
+    flex: 1 1 100%;
+    order: 1;
+}
+
+.stat-card:nth-child(2) {
+    flex: 1 1 calc(40% - var(--form-gap) - var(--form-gap));
+    order: 2;
+}
+
+.stat-card:nth-child(3),
+.stat-card:nth-child(4) {
+    flex: 1 1 calc(30% - var(--form-gap) - var(--form-gap));
+    order: 2;
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1064px) {
+    .stat-card:nth-child(1) {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .stat-card:nth-child(2) {
+        flex: 1 1 100%;
+        order: 2;
+    }
+
+    .stat-card:nth-child(3),
+    .stat-card:nth-child(4) {
+        flex: 1 1 calc(50% - var(--form-gap));
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .stat-card:nth-child(1) {
+        flex: 1 1 100%;
+    }
+
+    .stat-card:nth-child(2) {
+        flex: 1 1 100%;
+    }
+
+    .stat-card:nth-child(3) {
+        order: 3;
+        flex: 1 1 calc(50% - var(--form-gap));
+    }
+
+    .stat-card:nth-child(4) {
+        order: 4;
+        flex: 1 1 calc(50% - var(--form-gap));
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.dashboard_stats_section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--form-gap);
+    flex-wrap: wrap;
+}
+
+
+.wavechart_container {
+    height: 128px;
+}
+
+.card_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_content_left {
+    width: 48px;
+    flex-grow: 0;
+    flex-basis: 48px;
+}
+
+.divider {
+    width: 2px;
+    background-color: var(--card-border-color);
+    height: 100%;
+    align-self: stretch;
+}
+
+@media (min-width: 1441px) {
+    .dashboard_stats_section{
+        flex-wrap: unset;
+    }
+    .dashboard_stats_section > section:nth-child(1) {
+        width: calc(50% - var(--form-gap) - var(--form-gap));
+        flex-grow: 1;
+    }
+    
+    .dashboard_stats_section > section:nth-child(2) {
+        width: calc(25% - var(--form-gap) - var(--form-gap));
+        flex-grow: 1;
+    }
+    
+    .dashboard_stats_section > section:nth-child(3) {
+        width: calc(25% - var(--form-gap) - var(--form-gap));
+        flex-grow: 1;
+    }
+}
+
+
+
+
+@media (min-width: 1065px) and (max-width: 1440px) {
+    .dashboard_stats_section{
+        flex-wrap: wrap;
+    }
+
+    .dashboard_stats_section > section:nth-child() {
+        width: 100%;
+        flex-grow: 1;
+    }
+    
+    .dashboard_stats_section > section:nth-child(2) {
+        width: calc(50% - var(--form-gap));
+        flex-grow: 1;
+    }
+    
+    .dashboard_stats_section > section:nth-child(3) {
+        width: calc(50% - var(--form-gap));
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1064px) {
+    
+.dashboard_stats_section > section:nth-child(1) {
+    flex: 1 1 calc(33% - var(--form-gap) - var(--form-gap));
+    order: 1;
+}
+
+.dashboard_stats_section > section:nth-child(2) {
+    flex: 1 1 calc(33% - var(--form-gap) - var(--form-gap));
+    order: 1;
+}
+
+.dashboard_stats_section > section:nth-child(3) {
+    flex: 1 1 calc(33% - var(--form-gap) - var(--form-gap));
+    order: 1;
+}
+
+}
+
+
+@media (max-width: 768px) {
+    .dashboard_stats_section section:nth-child(1) {
+        flex: 1 1 100%;
+    }
+    
+    .dashboard_stats_section section:nth-child(2) {
+        flex: 1 1 100%;
+        order: 2;
+    }
+    
+    .dashboard_stats_section section:nth-child(3) {
+        flex: 1 1 100%;
+        order: 1;
+    }
+} 
+
+.ticketsChart_container{
+    height: 300px;
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .ticketsChart_container{
+        height: 250px;
+        width: 250px;
+    }
+} 
+
+.dashboard_tasks_section{
+    margin-top: var(--form-gap);
+}
+
+td.ws_nw{
+    width: 120px;
+}
+
+#dashboard_boardlist{
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.task_count[zero = false] img:nth-child(3){
+    display: none;
+}
+
+.task_count[zero = true] img:nth-child(2){
+    display: none;
+}
+
+.task_count[zero = true] p{
+    color: var(--card-border-color);
+}
+
+.task_count[zero = true]{
+    gap: 6px;
+}
+
+#dashboard_tasklist tr:hover {
+    cursor: pointer;
+    background-color: var(--card-border-color);
+    border-radius: var(--card-rad);
+}

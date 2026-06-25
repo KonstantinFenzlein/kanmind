@@ -1,0 +1,374 @@
+.std_form {
+    border-radius: var(--form-rad);
+    border: var(--form-border);
+    background-color: var(--form-bg-color);
+    padding: var(--form-pad);
+    max-width: var(--form-max-w);    
+    height: fit-content;
+    margin: auto;
+}
+
+.std_form_small {
+    border-radius: var(--form-rad);
+    border: var(--form-border);
+    background-color: var(--form-bg-color);
+    padding: var(--form-pad);
+    width: var(--form-s-max-w);
+}
+
+.form_group_w_icon_wo_label,
+.form_group_wo_icon_w_label input,
+.form_group_wo_icon_w_label textarea {
+    border-radius: var(--form-input-rad);
+    border: var(--form-input-border);
+    background-color: var(--form-input-bg-color);
+    padding: var(--form-input-pad);
+    display: flex;
+    gap: var(--form-input-pad);
+    align-items: center;
+    color: var(--font_white_color);
+
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+.form_group_w_icon_wo_label>img,
+.password_eye {
+    width: 20px;
+    height: 20px;
+}
+
+.form_group_w_icon_wo_label {
+    position: relative;
+    margin-top: 16px;
+}
+
+.password_eye {
+    cursor: pointer;
+}
+
+.form_group_w_icon_wo_label input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: var(--form-input-bg-color);
+    color: var(--font_white_color);
+}
+
+.error_label{
+    color: var(--form-input-error-border-color);
+    font-size: 14px !important;
+    display: none;
+}
+
+.form_group_w_icon_wo_label .error_label{
+    position: absolute;
+    font-size: 14px;
+    bottom: 0;
+    transform: translate(32px, 100%);
+    width: calc(100% - 36px);
+}
+
+.form_group_checkbox[error="true"] .error_label,
+.form_group_w_icon_wo_label[error="true"] .error_label{
+    display: block;
+}
+
+.form_group_wo_icon_w_label  .error_label{
+    color: transparent;
+    display: block;
+}
+
+.form_group_w_icon_wo_label[error="true"],
+.form_group_wo_icon_w_label[error="true"] > input{
+    border-color: var(--form-input-error-border-color);
+}
+
+
+
+.form_group_wo_icon_w_label[error="true"] .error_label{
+    color: var(--form-input-error-border-color);
+}
+
+@media screen and (max-width: 500px) {
+    .form_group_w_icon_wo_label[error="true"]{
+        margin-bottom: 16px;
+        font-size: 14px;
+    }
+}
+
+.form_group_checkbox > .error_label{
+    padding-left: 36px;
+}
+
+.form_group_wo_icon_w_label>label {
+    height: 20px;
+    color: var(--font_white_color);
+    font-size: 14px;
+}
+
+
+
+.label_required::after {
+    content: " *";
+    color: var(--form-input-error-border-color);
+}
+
+
+.form_group_w_icon_wo_label label {
+    position: absolute;
+    height: 20px;
+    left: calc(20px + 14px + 14px);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.form_group_invite label {
+    left: 20px;
+}
+
+.form_group_w_icon_wo_label input:focus+label,
+.form_group_w_icon_wo_label input:valid+label {
+    top: -16px;
+    left: 0px;
+    color: var(--font_white_color);
+}
+
+
+
+
+.custom_checkbox input {
+    display: none;
+}
+
+.custom_checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom_checkbox .checkbox_icon {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--btn-prime-color);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.custom_checkbox .checkbox_icon::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    display: none;
+    background-image: url("../../assets/icons/check_box_checked.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.custom_checkbox input:checked+.checkbox_icon {
+    border: none;
+}
+
+.custom_checkbox input:checked+.checkbox_icon::after {
+    display: block;
+}
+
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+}
+
+.dropdown_title {
+    height: 20px;
+    color: var(--font_white_color);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.dropdown_toggle {
+    cursor: pointer;
+    border-radius: var(--form-input-rad);
+    border: var(--form-input-border);
+    background-color: var(--form-input-bg-color);
+    padding: var(--form-input-pad);
+    display: flex;
+    gap: var(--form-input-pad);
+    align-items: center;
+    color: var(--font_white_color);
+    justify-content: space-between;
+    max-height: 52px;
+}
+
+.dropdown_toggle>img {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown_choosen_element {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: calc(100% - 32px);
+}
+
+
+
+.dropdown.open .dropdown_toggle>img {
+    transform: rotate(180deg);
+    transition: transform 0.2s ease;
+}
+
+
+
+.dropdown_menu {
+    position: absolute;
+    z-index: 3;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+
+    border-radius: var(--form-input-rad);
+    border: var(--form-input-border);
+    background-color: var(--form-input-bg-color);
+    padding: var(--form-input-pad);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    color: var(--font_white_color);
+    flex-direction: column;
+
+    max-height: 200px;
+    overflow-y: auto;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.open .dropdown_menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown_menu {
+    min-width: 100%;
+}
+
+.dropdown_menu li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.dropdown_menu li:hover {
+    background-color: var(--btn-third-font-color);
+}
+
+.dropdown_menu img,
+.dropdown_menu .profile_circle,
+.dropdown_choosen_element .profile_circle {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.dropdown_choosen_element > p,
+.dropdown_menu  p{
+    word-break: unset;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.dropdown_menu li:hover img {
+    transform: rotate(5deg);
+}
+
+
+
+.custom_datepicker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    border-radius: var(--form-input-rad);
+    border: var(--form-input-border);
+    background-color: var(--form-input-bg-color);
+}
+
+.custom_datepicker input {
+    z-index: 2;
+    width: 100%;
+    border: none;
+    background-color: transparent;    
+    padding-right: 16px;
+    display: block;
+}
+
+.custom_datepicker input:active,
+.custom_datepicker input:focus {
+    border: none;
+    outline: none;
+}
+
+.custom_datepicker img {
+    position: absolute;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.custom_datepicker input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+select{
+    border: none;
+    background-color: var(--card-border-color);
+    color: var(--font_white_color);
+    padding: var(--btn-pad);
+    border-radius: var(--form-input-rad);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+option {
+    
+}

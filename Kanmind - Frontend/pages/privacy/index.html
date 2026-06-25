@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KanMind - Dashboard</title>
+
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/standard.css">
+    <link rel="stylesheet" href="../../shared/css/fonts.css">
+    <link rel="stylesheet" href="../../shared/css/assets.css">
+    <link rel="stylesheet" href="../../shared/css/header_footer.css">
+
+    <script src="../../shared/js/ui_helper.js"></script>
+    <script src="../../shared/js/api.js"></script>
+    <script src="../../shared/js/header.js"></script>
+
+    <script>
+        function checkNav(){
+            if(getAuthUserId() == null) document.querySelector("nav").remove();
+        };
+    </script>
+</head>
+
+<body onload="setHeader();checkNav()">
+    <header onclick="redirectToDashboard()" class="main_header w_full">
+        <img src="../../assets/icons/logo_icon.svg" alt="" srcset="">
+        <div id="head_content_right" class="d_flex_cc_gm head_content_right"></div>
+    </header>
+    <main class="w_full d_flex_ss_gl font_white_color">
+
+        <nav class="font_sec_color w_full">
+            <a class="link_secondary" href="../dashboard/">Dashboard</a>
+            /
+            <a class="link_secondary" href="./index.html">Privacy Policy</a>
+        </nav>
+
+        <h1 class="font_prime_color">Privacy Policy</h1>
+
+        <section class="d_flex_ss_gm f_d_c">
+            <h2>Subtitle</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ea placeat illo omnis, atque temporibus nostrum quia! Impedit, aliquid. Placeat impedit neque quod quasi eos fuga ipsa fugit odit voluptatem?
+            </p>
+        </section>
+    </main>
+    <footer class="main_footer  w_full">
+        <nav class="d_flex_cs_gl">
+            <a href="../imprint/index.html" class="link">Imprint</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
