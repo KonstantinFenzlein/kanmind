@@ -11,3 +11,6 @@ db.sqlite3-journal
 # Editors
 .vscode/
 .idea/
+
+# Frontend (not pushed to GitHub)
+Kanmind - Frontend/
