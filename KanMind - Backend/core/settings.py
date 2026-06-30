@@ -8,22 +8,27 @@
 # Die vollständige Liste aller Einstellungen und ihrer Werte findest du unter
 # https://docs.djangoproject.com/en/6.0/ref/settings/
 
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 # Pfade innerhalb des Projekts so aufbauen: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / '.env')
 
 
 # Schnellstart-Einstellungen für die Entwicklung - nicht für den Produktivbetrieb geeignet
 # Siehe https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SICHERHEITSWARNUNG: den im Produktivbetrieb verwendeten Secret Key geheim halten!
-SECRET_KEY = 'django-insecure-ezq&j9+h85+o)!$qotcwmv97-xlvkfppt5pvj^w&oqdgt_)8f&'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SICHERHEITSWARNUNG: im Produktivbetrieb nicht mit aktiviertem Debug-Modus laufen lassen!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [h for h in os.environ.get('ALLOWED_HOSTS', '').split(',') if h]
 
 
 # Anwendungsdefinition
